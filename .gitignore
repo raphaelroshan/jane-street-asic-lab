@@ -1,6 +1,10 @@
 .DS_Store
 .idea
 *.vcd
+.tools/
+.venv/
+.pytest_cache/
+__pycache__/
 *.fst
 *.fst.hier
 runs

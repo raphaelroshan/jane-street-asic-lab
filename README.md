@@ -1,42 +1,76 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
+# Protocol Emulator ASIC Learning Lab
 
-# Tiny Tapeout Verilog Project Template
+This is a learning-first starting point for Jane Street's
+[protocol emulator ASIC competition](https://blog.janestreet.com/protocol-emulator-asic-competition/).
+It is based on Tiny Tapeout's `cmos5l` Verilog template.
 
-- [Read the documentation for project](docs/info.md)
+The checked-in RTL is **Lab 1, not the competition design**. It is a tiny
+serially programmable timing engine intended to make clock-by-clock behavior
+easy to understand. We will replace or evolve it only after writing down the
+requirements and comparing architecture choices.
 
-## What is Tiny Tapeout?
+## Start here
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+```sh
+make setup       # project-local simulator, synthesis tools, and Python env
+make doctor      # show exactly which tools will run
+make test        # assembler tests, RTL simulation, lint, and synthesis
+```
 
-To learn more and get started, visit https://tinytapeout.com.
+`make setup` downloads the platform's OSS CAD Suite archive into the ignored
+`.tools/` directory. Extracted tools currently use roughly 1.8 GB on macOS.
+It does not modify Homebrew or require administrator access.
 
-## Set up your Verilog project
+### Windows
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
+Use Windows 11 with WSL2 and an Ubuntu distribution. From PowerShell in the
+repository, run:
 
-The GitHub action will automatically build the ASIC files using [LibreLane](https://www.zerotoasiccourse.com/terminology/librelane/).
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\setup-windows.ps1
+```
 
-## Enable GitHub actions to build the results page
+The launcher installs the small Ubuntu prerequisites, downloads the Linux OSS
+CAD Suite inside the project, creates the Python environment, and runs all
+tests. It may prompt for your WSL password while installing Ubuntu packages.
+Afterward, develop from a WSL terminal or VS Code's WSL extension:
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+```sh
+make doctor
+make test
+```
 
-## Resources
+Native PowerShell simulation is intentionally not the primary path: Tiny
+Tapeout's eventual LibreLane physical-design flow is Linux-oriented, so using
+WSL from day one avoids maintaining two subtly different environments.
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
+Then read these in order:
 
-## What next?
+1. [`docs/DESIGN.md`](docs/DESIGN.md) — the four-instruction Lab 1 machine.
+2. [`src/timing_core.v`](src/timing_core.v) — about one page of real RTL.
+3. [`test/test.py`](test/test.py) — the executable clock-edge specification.
+4. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — decisions and staged work.
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
+Generate the demo program bytes:
+
+```sh
+.venv/bin/python tools/lab_asm.py
+```
+
+## What is automated—and what is not
+
+Automated: repeatable tool installation, encoding checks, RTL simulation,
+linting, synthesis, and eventually the Tiny Tapeout GDS workflow.
+
+Kept human-visible: protocol timing calculations, ISA decisions, CDC choices,
+area/timing interpretation, test-oracle design, and every architecture change.
+The goal is to automate repetition and evidence, not judgment.
+
+## Repository status
+
+- Lab allocation remains `1x1`; do not change it to the competition allocation
+  until Jane Street and Tiny Tapeout resolve the current template-size mismatch.
+- Bidirectional pins are reserved for the later host-interface/I2C lab.
+- The full LibreLane CMOS5L flow is intentionally not installed by `make setup`.
+  First learn and stabilize RTL; then enable GitHub GDS CI or follow Tiny
+  Tapeout's local-hardening guide.
