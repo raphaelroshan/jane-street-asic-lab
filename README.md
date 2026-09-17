@@ -60,7 +60,9 @@ Then read these in order:
 8. [`docs/ROADMAP.md`](docs/ROADMAP.md) — milestones through January 18, 2027.
 9. [`docs/STATUS.md`](docs/STATUS.md) — measured physical results and known gaps.
 10. [`docs/RESEARCH.md`](docs/RESEARCH.md) — public evidence behind the direction.
-11. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
+11. [`docs/DESIGN_WORKBOOK.md`](docs/DESIGN_WORKBOOK.md) — questions and experiments for you to resolve.
+12. [`docs/RESOURCE_GUIDE.md`](docs/RESOURCE_GUIDE.md) — decision-oriented primary resources.
+13. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
 
 Generate the demo program bytes:
 
