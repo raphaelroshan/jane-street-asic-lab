@@ -116,8 +116,10 @@ Relevant minimum timing translated to a 50 MHz clock:
 | Fast, 400 kHz | 125 clocks | 65 clocks | 30 clocks | 5 clocks |
 
 These values are derived from 4.7 us/4.0 us/250 ns for Standard-mode and
-1.3 us/0.6 us/100 ns for Fast-mode.  The final verification plan must cite and
-pin the exact I2C specification revision used.
+1.3 us/0.6 us/100 ns for Fast-mode in
+[NXP UM10204, I2C-bus specification and user manual, Rev. 7.0 — 1 October 2021](https://www.nxp.com/docs/en/user-guide/UM10204.pdf).
+The verification environment must retain this revision rather than silently
+following a moving web reference.
 
 ### Peripheral ACK response
 
