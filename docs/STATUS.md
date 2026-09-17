@@ -18,7 +18,11 @@ Passing locally and in the primary GitHub test workflow:
 
 ## CMOS5L baseline
 
-Evidence run: [GitHub Actions 35054434078](https://github.com/raphaelroshan/jane-street-asic-lab/actions/runs/35054434078), commit `fed8ad9`.
+Measured metrics came from
+[GitHub Actions 35054434078](https://github.com/raphaelroshan/jane-street-asic-lab/actions/runs/35054434078),
+commit `fed8ad9`.  A later clean baseline run,
+[GitHub Actions 35185459218](https://github.com/raphaelroshan/jane-street-asic-lab/actions/runs/35185459218),
+commit `5a12cdf`, passes GDS, precheck, gate-level simulation, and viewer jobs.
 
 The GDS build and Tiny Tapeout precheck completed successfully for a 1x1 tile.
 
@@ -40,19 +44,19 @@ This is a valuable warning: even the 128-bit flip-flop program store dominates
 sequential area and the physical flow adds substantial clock/timing repair.
 Future memories require full hardening evidence, not only generic cell counts.
 
-## Known infrastructure gaps
+## Infrastructure notes
 
 ### Gate-level simulation
 
 The first CMOS5L gate-level job failed during model elaboration because the
 template omitted `sg13cmos5l_udp.v`, leaving the `ihp_dff_r` primitive
-unresolved.  The missing model is now included in `test/Makefile`; a fresh
-physical workflow must confirm the fix before this gap is closed.
+unresolved.  Including the PDK UDP model in `test/Makefile` fixed the issue;
+run 35185459218 confirms the gate-level suite passes.
 
 ### GDS viewer
 
-The viewer artifact is generated, but deployment fails because GitHub Pages is
-not yet enabled for the repository.  This does not affect GDS or precheck.
+GitHub Pages is configured for workflow deployment.  The GDS viewer job now
+passes and publishes the baseline layout.
 
 ### Competition allocation
 

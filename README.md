@@ -1,5 +1,9 @@
 # Protocol Emulator ASIC Learning Lab
 
+[![test](https://github.com/raphaelroshan/jane-street-asic-lab/actions/workflows/test.yaml/badge.svg)](https://github.com/raphaelroshan/jane-street-asic-lab/actions/workflows/test.yaml)
+[![docs](https://github.com/raphaelroshan/jane-street-asic-lab/actions/workflows/docs.yaml/badge.svg)](https://github.com/raphaelroshan/jane-street-asic-lab/actions/workflows/docs.yaml)
+[![gds](https://github.com/raphaelroshan/jane-street-asic-lab/actions/workflows/gds.yaml/badge.svg)](https://github.com/raphaelroshan/jane-street-asic-lab/actions/workflows/gds.yaml)
+
 This is a learning-first starting point for Jane Street's
 [protocol emulator ASIC competition](https://blog.janestreet.com/protocol-emulator-asic-competition/).
 It is based on Tiny Tapeout's `cmos5l` Verilog template.
@@ -78,9 +82,8 @@ The goal is to automate repetition and evidence, not judgment.
 - Lab allocation remains `1x1`; do not change it to the competition allocation
   until Jane Street and Tiny Tapeout resolve the current template-size mismatch.
 - Bidirectional pins are reserved for the later host-interface/I2C lab.
-- The first CMOS5L GDS build and Tiny Tapeout precheck pass. Gate-level
-  simulation is currently blocked by an unresolved CMOS5L primitive model;
-  see [`docs/STATUS.md`](docs/STATUS.md).
+- The CMOS5L GDS build, Tiny Tapeout precheck, gate-level simulation, and GDS
+  viewer pass for the teaching core; see [`docs/STATUS.md`](docs/STATUS.md).
 - The project direction is a single-engine verified peripheral emulator with
   an independent safety guardian. The submission architecture remains a draft;
   the checked-in RTL is still the teaching core.
