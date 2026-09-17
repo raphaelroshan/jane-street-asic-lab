@@ -4,6 +4,21 @@ This roadmap assumes one primary contributor using AI for mechanical work and
 review support, with architecture, timing math, and evidence interpretation
 remaining human-owned.  Scope is reduced before dates move.
 
+## GitHub tracking
+
+- M0: [cycle budgets](https://github.com/raphaelroshan/jane-street-asic-lab/issues/1),
+  [memory sizing](https://github.com/raphaelroshan/jane-street-asic-lab/issues/2),
+  [ISA freeze](https://github.com/raphaelroshan/jane-street-asic-lab/issues/3),
+  [pin/host contract](https://github.com/raphaelroshan/jane-street-asic-lab/issues/4)
+- M1: [execution engine](https://github.com/raphaelroshan/jane-street-asic-lab/issues/5),
+  [deterministic-retirement proof](https://github.com/raphaelroshan/jane-street-asic-lab/issues/6)
+- M2: [host SPI/CDC](https://github.com/raphaelroshan/jane-street-asic-lab/issues/7),
+  [guardian and FIFO proofs](https://github.com/raphaelroshan/jane-street-asic-lab/issues/8)
+- M3: [protocol firmware/models](https://github.com/raphaelroshan/jane-street-asic-lab/issues/9),
+  [fault injection and trace](https://github.com/raphaelroshan/jane-street-asic-lab/issues/10)
+- M4: [gate-level and physical closure](https://github.com/raphaelroshan/jane-street-asic-lab/issues/11)
+- M5: [submission evidence](https://github.com/raphaelroshan/jane-street-asic-lab/issues/12)
+
 ## M0 — architecture freeze: September 17–30
 
 - [x] Establish a tested, programmable teaching core

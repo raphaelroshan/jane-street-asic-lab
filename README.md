@@ -53,7 +53,8 @@ Then read these in order:
 5. [`docs/VERIFICATION_PLAN.md`](docs/VERIFICATION_PLAN.md) — proof obligations and evidence layers.
 6. [`docs/ROADMAP.md`](docs/ROADMAP.md) — milestones through January 18, 2027.
 7. [`docs/STATUS.md`](docs/STATUS.md) — measured physical results and known gaps.
-8. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
+8. [`docs/RESEARCH.md`](docs/RESEARCH.md) — public evidence behind the direction.
+9. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
 
 Generate the demo program bytes:
 

@@ -44,11 +44,10 @@ Future memories require full hardening evidence, not only generic cell counts.
 
 ### Gate-level simulation
 
-The current CMOS5L gate-level job fails during model elaboration because the
-PDK's `sg13cmos5l_stdcell.v` references an unresolved `ihp_dff_r` primitive.
-GDS generation and precheck succeed.  Track this as a flow/model integration
-problem and do not misreport the overall workflow as signed off until it is
-resolved.
+The first CMOS5L gate-level job failed during model elaboration because the
+template omitted `sg13cmos5l_udp.v`, leaving the `ihp_dff_r` primitive
+unresolved.  The missing model is now included in `test/Makefile`; a fresh
+physical workflow must confirm the fix before this gap is closed.
 
 ### GDS viewer
 
