@@ -50,11 +50,12 @@ Then read these in order:
 2. [`src/timing_core.v`](src/timing_core.v) — about one page of real RTL.
 3. [`test/test.py`](test/test.py) — the executable clock-edge specification.
 4. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — the draft competition MVP.
-5. [`docs/VERIFICATION_PLAN.md`](docs/VERIFICATION_PLAN.md) — proof obligations and evidence layers.
-6. [`docs/ROADMAP.md`](docs/ROADMAP.md) — milestones through January 18, 2027.
-7. [`docs/STATUS.md`](docs/STATUS.md) — measured physical results and known gaps.
-8. [`docs/RESEARCH.md`](docs/RESEARCH.md) — public evidence behind the direction.
-9. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
+5. [`docs/CYCLE_BUDGETS.md`](docs/CYCLE_BUDGETS.md) — protocol timing pressure on the ISA.
+6. [`docs/VERIFICATION_PLAN.md`](docs/VERIFICATION_PLAN.md) — proof obligations and evidence layers.
+7. [`docs/ROADMAP.md`](docs/ROADMAP.md) — milestones through January 18, 2027.
+8. [`docs/STATUS.md`](docs/STATUS.md) — measured physical results and known gaps.
+9. [`docs/RESEARCH.md`](docs/RESEARCH.md) — public evidence behind the direction.
+10. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
 
 Generate the demo program bytes:
 
