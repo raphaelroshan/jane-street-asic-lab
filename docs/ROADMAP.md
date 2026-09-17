@@ -27,7 +27,8 @@ remaining human-owned.  Scope is reduced before dates move.
 - [x] Draft UART, SPI, and I2C inner-loop cycle budgets
 - [ ] Resolve the six open architecture decisions
 - [ ] Estimate 32-word and 64-word program-store area
-- [ ] Freeze instruction semantics, pin map, and host register model
+- [ ] Freeze instruction semantics
+- [x] Draft pin map and host register model
 - [ ] Write tests for semantics before replacing teaching RTL
 
 Exit criterion: no unresolved decision changes the top-level interface or
