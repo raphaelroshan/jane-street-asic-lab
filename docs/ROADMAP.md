@@ -26,7 +26,8 @@ remaining human-owned.  Scope is reduced before dates move.
 - [x] Select the single-engine verified peripheral-emulator direction
 - [x] Draft UART, SPI, and I2C inner-loop cycle budgets
 - [ ] Resolve the six open architecture decisions
-- [ ] Estimate 32-word and 64-word program-store area
+- [x] Compare generic 32-word and 64-word program-store logic
+- [ ] Harden 32-word and 64-word program stores in CMOS5L
 - [ ] Freeze instruction semantics
 - [x] Draft pin map and host register model
 - [ ] Write tests for semantics before replacing teaching RTL
