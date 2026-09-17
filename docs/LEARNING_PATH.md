@@ -26,6 +26,10 @@ submission needs 16-bit instructions, shift registers, and a clock divider?
 
 ## Stage 2 — write the submission architecture record
 
+The first draft now lives in [`ARCHITECTURE.md`](ARCHITECTURE.md), with the
+evidence strategy in [`VERIFICATION_PLAN.md`](VERIFICATION_PLAN.md). Review and
+challenge it before treating it as an implementation specification.
+
 Before extending RTL, compare at least:
 
 1. one compact CPU;

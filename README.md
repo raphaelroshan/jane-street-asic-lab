@@ -49,7 +49,11 @@ Then read these in order:
 1. [`docs/DESIGN.md`](docs/DESIGN.md) — the four-instruction Lab 1 machine.
 2. [`src/timing_core.v`](src/timing_core.v) — about one page of real RTL.
 3. [`test/test.py`](test/test.py) — the executable clock-edge specification.
-4. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — decisions and staged work.
+4. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — the draft competition MVP.
+5. [`docs/VERIFICATION_PLAN.md`](docs/VERIFICATION_PLAN.md) — proof obligations and evidence layers.
+6. [`docs/ROADMAP.md`](docs/ROADMAP.md) — milestones through January 18, 2027.
+7. [`docs/STATUS.md`](docs/STATUS.md) — measured physical results and known gaps.
+8. [`docs/LEARNING_PATH.md`](docs/LEARNING_PATH.md) — staged exercises.
 
 Generate the demo program bytes:
 
@@ -71,6 +75,9 @@ The goal is to automate repetition and evidence, not judgment.
 - Lab allocation remains `1x1`; do not change it to the competition allocation
   until Jane Street and Tiny Tapeout resolve the current template-size mismatch.
 - Bidirectional pins are reserved for the later host-interface/I2C lab.
-- The full LibreLane CMOS5L flow is intentionally not installed by `make setup`.
-  First learn and stabilize RTL; then enable GitHub GDS CI or follow Tiny
-  Tapeout's local-hardening guide.
+- The first CMOS5L GDS build and Tiny Tapeout precheck pass. Gate-level
+  simulation is currently blocked by an unresolved CMOS5L primitive model;
+  see [`docs/STATUS.md`](docs/STATUS.md).
+- The project direction is a single-engine verified peripheral emulator with
+  an independent safety guardian. The submission architecture remains a draft;
+  the checked-in RTL is still the teaching core.
